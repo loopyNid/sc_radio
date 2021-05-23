@@ -27,7 +27,10 @@ COPY radio.sc /radio.sc
 
 COPY Procfile Procfile
 
+COPY sc-hacks-redux /usr/share/SuperCollider/Extensions/
+
 EXPOSE 8000
+EXPOSE 22245/udp
 RUN mv /etc/security/limits.d/audio.conf.disabled /etc/security/limits.d/audio.conf && \
 	usermod -a -G audio root
 
